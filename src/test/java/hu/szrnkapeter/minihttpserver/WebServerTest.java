@@ -54,7 +54,7 @@ class WebServerTest {
 	}
 	
 	@Test
-	@Disabled("Working test, but must be ignored due to Github Action issue")
+	//@Disabled("Working test, but must be ignored due to Github Action issue")
 	void testWithHttpsConfig() throws Exception {
 		Config config = PropertyUtil.loadProperties("config-https.properties");
 		server = new WebServer(config);
