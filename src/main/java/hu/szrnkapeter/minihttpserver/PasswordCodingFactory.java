@@ -1,8 +1,7 @@
 package hu.szrnkapeter.minihttpserver;
 
 import java.nio.charset.StandardCharsets;
-
-import javax.xml.bind.DatatypeConverter;
+import java.util.Base64;
 
 /**
  * Password encoder factory
@@ -20,7 +19,7 @@ public class PasswordCodingFactory {
 		 */
 		@Override
 		public String decode(final String input) {
-			return new String(DatatypeConverter.parseBase64Binary(input), StandardCharsets.UTF_8);
+			return new String(Base64.getDecoder().decode(input), StandardCharsets.UTF_8);
 		}
 
 		/*
@@ -29,7 +28,7 @@ public class PasswordCodingFactory {
 		 */
 		@Override
 		public String encode(final String input) {
-			return DatatypeConverter.printBase64Binary(input.getBytes());
+			return Base64.getEncoder().encodeToString(input.getBytes());
 		}
 
 	}
