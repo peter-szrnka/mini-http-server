@@ -62,7 +62,7 @@ class WebServerTest {
 		server.stop();
 		
 		// assert
-		TestUtils.assertLogExists(logHandler.getList(), Level.INFO, "WebServer started on https port 9000");
+		TestUtils.assertLogExists(logHandler.getList(), Level.INFO, "WebServer started on https port 9123");
 		TestUtils.assertLogExists(logHandler.getList(), Level.INFO, "WebServer stopped");
 	}
 
