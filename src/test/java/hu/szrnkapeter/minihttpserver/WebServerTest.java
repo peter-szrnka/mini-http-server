@@ -92,6 +92,7 @@ class WebServerTest {
 		FileOutputStream fos = new FileOutputStream("test_keystore.jks");
 		ks.store(fos, password);
 		fos.close();
+		
 	}
 
 	@Test
