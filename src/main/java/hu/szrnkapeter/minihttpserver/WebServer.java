@@ -26,6 +26,8 @@ public class WebServer {
 	public WebServer(final Config config) {
 		this.config = config;
 		server = new Server(config.getServerPort());
+		server.setStopAtShutdown(false);
+		server.setStopTimeout(1l);
 	}
 
 	private Connector createConnector() {
@@ -40,7 +42,7 @@ public class WebServer {
 
 		final ServerConnector connector = new ServerConnector(server,
 				new SslConnectionFactory(sslContextFactory, "http/1.1"), new HttpConnectionFactory(https));
-		connector.setPort(config.getServerPort());
+		connector.setPort(443);
 		return connector;
 	}
 
@@ -72,6 +74,7 @@ public class WebServer {
 	public void stop() throws Exception {
 		if (server.isRunning()) {
 			server.stop();
+			server.destroy();
 			LOGGER.info(() -> "WebServer stopped");
 		}
 	}
