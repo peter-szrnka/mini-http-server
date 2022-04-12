@@ -3,7 +3,6 @@ package hu.szrnkapeter.minihttpserver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

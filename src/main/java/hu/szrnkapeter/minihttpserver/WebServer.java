@@ -40,7 +40,7 @@ public class WebServer {
 
 		final ServerConnector connector = new ServerConnector(server,
 				new SslConnectionFactory(sslContextFactory, "http/1.1"), new HttpConnectionFactory(https));
-		connector.setPort(443);
+		connector.setPort(config.getServerPort());
 		return connector;
 	}
 
