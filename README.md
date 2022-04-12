@@ -2,9 +2,9 @@
 
 A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) ) It's very useful for local Javascript (Angular JS, Progressive Web Apps, etc.) web development.
 
-| Build | Code coverage |
-| ------------- | ------------- |
-| ![Build status](https://travis-ci.org/szrnka-peter/mini-http-server.svg?branch=master) | [![codecov](https://codecov.io/gh/szrnka-peter/mini-http-server/branch/master/graph/badge.svg)](https://codecov.io/gh/szrnka-peter/mini-http-server)
+| Build | Code coverage | Code quality |
+| ----- | ------------- | ------------ |
+| ![Build status](https://travis-ci.org/szrnka-peter/mini-http-server.svg?branch=master) | [![codecov](https://codecov.io/gh/szrnka-peter/mini-http-server/branch/master/graph/badge.svg)](https://codecov.io/gh/szrnka-peter/mini-http-server) | [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=szrnka-peter_mini-http-server&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=szrnka-peter_mini-http-server) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=szrnka-peter_mini-http-server&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=szrnka-peter_mini-http-server) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=szrnka-peter_mini-http-server&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=szrnka-peter_mini-http-server) |
 
 ## Used technologies
 - Java 8
