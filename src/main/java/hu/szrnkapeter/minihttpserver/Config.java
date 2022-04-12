@@ -11,9 +11,6 @@ public class Config {
 	private String truststorePassword;
 	private String wwwDir;
 
-	public Config() {
-	}
-
 	public String getEncriptType() {
 		return encriptType;
 	}

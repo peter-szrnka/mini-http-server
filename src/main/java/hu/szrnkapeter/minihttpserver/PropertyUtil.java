@@ -1,14 +1,16 @@
 package hu.szrnkapeter.minihttpserver;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import hu.szrnkapeter.minihttpserver.PasswordCodingFactory.PassWordManager;
 
 public class PropertyUtil {
+	
+	private static final Logger LOGGER = Logger.getLogger(PropertyUtil.class.getName());
+	
+	private PropertyUtil() {}
 
 	public static Config loadProperties() {
 		return loadProperties("config.properties");
@@ -17,18 +19,16 @@ public class PropertyUtil {
 	public static Config loadProperties(final String propertyFile) {
 		final Config config = new Config();
 		final Properties prop = new Properties();
-		InputStream input = null;
 
-		if (!new File(propertyFile).exists()) {
-			System.out.println("No configuration file exists. Server starts in HTTP mode.");
+		if (PropertyUtil.class.getClassLoader().getResourceAsStream(propertyFile) == null) {
+			LOGGER.info(() -> "No configuration file exists. Server starts in HTTP mode.");
 			config.setServerPort(8080);
 			config.setServerType("http");
 			config.setWwwDir(".");
 			return config;
 		}
 
-		try {
-			input = new FileInputStream(propertyFile);
+		try (InputStream input = PropertyUtil.class.getClassLoader().getResourceAsStream(propertyFile)) {
 			prop.load(input);
 			final PassWordManager passManager = new PasswordCodingFactory(prop.getProperty("password.encrypttype")).getManager();
 
@@ -41,16 +41,8 @@ public class PropertyUtil {
 			config.setTruststoreLocation(prop.getProperty("truststore.location"));
 			config.setTruststorePassword(passManager.decode(prop.getProperty("truststore.password")));
 
-		} catch (final IOException ex) {
-			ex.printStackTrace();
-		} finally {
-			if (input != null) {
-				try {
-					input.close();
-				} catch (final IOException e) {
-					e.printStackTrace();
-				}
-			}
+		} catch (final Exception ex) {
+			LOGGER.warning(ex::getMessage);
 		}
 
 		return config;
