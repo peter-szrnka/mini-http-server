@@ -7,7 +7,7 @@
 	<name>mini-http-server</name>
 
 	<properties>
-		<jettyVersion>9.4.44.v20210927</jettyVersion>
+		<jettyVersion>10.0.10</jettyVersion>
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
