@@ -9,7 +9,6 @@ import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
-import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -41,7 +40,7 @@ public class WebServer {
 		https.addCustomizer(new SecureRequestCustomizer());
 
 		final ServerConnector connector = new ServerConnector(server,
-				new SslConnectionFactory(sslContextFactory, "http/1.1"), new HttpConnectionFactory(https));
+				new SslContextFactory.Server(), new HttpConnectionFactory(https));
 		connector.setPort(8443);
 		return connector;
 	}
