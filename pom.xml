@@ -7,7 +7,7 @@
 	<name>mini-http-server</name>
 
 	<properties>
-		<jettyVersion>9.4.44.v20210927</jettyVersion>
+		<jettyVersion>9.4.51</jettyVersion>
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -27,7 +27,7 @@
 		<developer>
 			<email>szrnka.peter@gmail.com</email>
 			<name>Péter Szrnka</name>
-			<url>https://github.com/szrnka-peter</url>
+			<url>https://github.com/peter-szrnka</url>
 			<roles>
 				<role>developer</role>
 			</roles>
