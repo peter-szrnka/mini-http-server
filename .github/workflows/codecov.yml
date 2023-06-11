@@ -12,11 +12,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11.0.x
-      - name: Build with Maven
-        run: mvn clean install -Pcodecov
-      - name: Upload to Codecov
-        uses: codecov/codecov-action@v2.0.2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./target/site/jacoco/jacoco.xml
-          flags: unittests
+      - name: Sonarcloud scan
+        working-directory: ./code/gms-backend
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn clean -Pcodecov -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=peter-szrnka_mini-http-server
