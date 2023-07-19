@@ -19,7 +19,7 @@
 		<assertj-core.version>3.22.0</assertj-core.version>
 		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 
-		<sonar.organization>szrnka-peter</sonar.organization>
+		<sonar.organization>peter-szrnka</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
