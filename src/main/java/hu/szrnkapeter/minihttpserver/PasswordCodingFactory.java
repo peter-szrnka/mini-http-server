@@ -53,7 +53,7 @@ public class PasswordCodingFactory {
 		String encode(String input);
 	}
 
-	private PassWordManager manager;
+	private final PassWordManager manager;
 
 	public PasswordCodingFactory(final String method) {
 		if ("base64".equals(method)) {

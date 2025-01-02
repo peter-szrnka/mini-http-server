@@ -32,10 +32,10 @@ public class PropertyUtil {
 			prop.load(input);
 			final PassWordManager passManager = new PasswordCodingFactory(prop.getProperty("password.encrypttype")).getManager();
 
-			config.setEncriptType(prop.getProperty("password.encrypttype"));
+			config.setEncryptType(prop.getProperty("password.encrypttype"));
 			config.setKeystoreLocation(prop.getProperty("keystore.location"));
 			config.setKeystorePassword(passManager.decode(prop.getProperty("keystore.password")));
-			config.setServerPort(Integer.valueOf(prop.getProperty("server.port")));
+			config.setServerPort(Integer.parseInt(prop.getProperty("server.port")));
 			config.setServerType(prop.getProperty("server.type"));
 			config.setWwwDir(prop.getProperty("www.dir"));
 			config.setTruststoreLocation(prop.getProperty("truststore.location"));

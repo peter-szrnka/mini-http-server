@@ -2,7 +2,7 @@ package hu.szrnkapeter.minihttpserver;
 
 public class Config {
 
-	private String encriptType;
+	private String encryptType;
 	private String keystoreLocation;
 	private String keystorePassword;
 	private int serverPort;
@@ -11,8 +11,8 @@ public class Config {
 	private String truststorePassword;
 	private String wwwDir;
 
-	public String getEncriptType() {
-		return encriptType;
+	public String getEncryptType() {
+		return encryptType;
 	}
 
 	public String getKeystoreLocation() {
@@ -43,8 +43,8 @@ public class Config {
 		return wwwDir;
 	}
 
-	public void setEncriptType(final String encriptType) {
-		this.encriptType = encriptType;
+	public void setEncryptType(final String encryptType) {
+		this.encryptType = encryptType;
 	}
 
 	public void setKeystoreLocation(final String keystoreLocation) {
