@@ -16,7 +16,7 @@
 		<junit.jupiter.version>5.8.2</junit.jupiter.version>
 		<junit.platform.version>1.8.2</junit.platform.version>
 		<mockito-core.version>4.4.0</mockito-core.version>
-		<assertj-core.version>3.22.0</assertj-core.version>
+		<assertj-core.version>3.27.7</assertj-core.version>
 		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
 
 		<sonar.organization>peter-szrnka</sonar.organization>
